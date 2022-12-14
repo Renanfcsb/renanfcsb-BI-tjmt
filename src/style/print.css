@@ -1,0 +1,28 @@
+
+
+.only-print{
+    display: none;
+}
+
+@media print{
+    .print{
+        display: none;
+    }
+    .only-print{
+        display: flex;
+        width: 100%;
+        position: fixed;
+        top:0;
+    }
+    #container-map{
+        position: relative;
+        width: 80vw;
+        height: 60vh;
+    }
+    #myChart{
+        width: 100%;
+    }
+    body{
+        box-shadow: none;
+    }
+}

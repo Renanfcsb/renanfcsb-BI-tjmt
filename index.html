@@ -1,18 +1,172 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Criando Filtro de Dados</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+
+    <!-- <script src="https://code.highcharts.com/maps/highmaps.js"></script> -->
+    <!-- <script src="https://code.highcharts.com/maps/modules/exporting.js"></script> -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+   
+    <script src="src/script/chartcreatmap.js"></script>
+    <script src="src/script/chartcreate.js"></script>
+    <script src="src/script/plugin.js"></script>
+    
+
+    <script defer src="src/script/charts.js"></script>
+    <script defer src="src/script/almoxarifado.js"></script>
+    <script defer src="src/script/renders.js"></script>
+
+    <link rel="stylesheet" href="src/style/reset.css">
+    <link rel="stylesheet" href="src/style/globalStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    
+    
+    <script src="src/script/index.js" defer></script>
+
+    <title>Document</title>
 </head>
-
 <body>
+    <img src="src/assets/header.png" class="only-print" alt="">
 
-  <!-- Linkando o nosso arquivo JS  -->
-  <script src="./script/data.js"></script>
-  <script src="./script/script.js"></script>
+    <header class="header print">
+        <img class="logo-coord" src="https://coordenadoriaadministrativa-mc.tjmt.jus.br/portalcoordenadoriaadministrativa-arquivos-prod/cms/LOGO_COORD_ADM_499511d107.png" alt="">
+        <img class="logo-tjmt" src="https://memorial-mc.tjmt.jus.br/portalmemorial-arquivos-prod/cms/001_SELO_Memorial_do_Poder_Judiciario_de_Mato_Grosso_11b25ab6da.png" alt="">
+        <div>
+            <img class="logo-dmp" src="https://seeklogo.com/images/D/dmp-logo-3465C6D549-seeklogo.com.png" alt="">
+            <h2 class="name-dmp">DEPARTAMENTO DE <strong>MATERIAL E PATRIMÔNIO</strong> </h2>
+        </div>
+        
+    </header>
+
+    
+    
+    <section class="container-all">
+        <div>
+            <nav class="nav-bar print">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-solid fa-paperclip"></i>
+                        <span class="nav-item">Almoxarifado</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-solid fa-recycle"></i>
+                        <span class="nav-item">Bens Inservíveis</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-regular fa-building"></i>
+                        <span class="nav-item">Imóveis</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-solid fa-chair"></i>
+                        <span class="nav-item">Patrimônio</span>
+                    </a>
+                </li>
+
+                <!-- <li>
+                    <a href="#">
+                        <i class="fas fa-solid fa-square-poll-horizontal"></i>
+                        <span class="nav-item">Relatórios</span>
+                    </a>
+                </li> -->
+                
+                <li>
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-item">Configurações</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Sair</span>
+                    </a>
+                </li>
+
+            </nav>
+        </div>
+
+        <div class="container-content">
+
+            <div class="filters print">
+                <div class="filter-data">
+                    Defina Data
+                    <div>
+                        <input type="date">
+                        <input type="date">
+                    </div>
+                </div>
+
+                <div class="filter-search">
+                    <input type="text" placeholder="Produto procurado">
+                    <i class=" fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div class="filter-instancia">
+                    
+                    <input type="checkbox" value="primeira">
+                    <label for="primeira">Primeira Instância </label>
+                    <input type="checkbox" value="segunda">
+                    <label for="segunda">Segunda Instância </label>   
+                </div>
+
+                <button class="filter-button-atualizar">Atualizar</button>
+
+                <button  class="troca" value="bar">Barra</button>
+                <button  class="troca" value="line">Linha</button>
+                <button  class="troca" value="doughnut">Rosquinha</button>
+            </div>
+
+
+
+            <div class="mycharts-render">
+                <canvas id="myChart">
+                    
+                </canvas>
+            </div>
+            
+        </div>
+        
+
+        <div id="container-map">
+        </div>
+
+
+        <div class="totalizadores print">
+            <div class="card-totalizador">
+                <i class="fa-solid fa-chart-line"></i>
+                <div class="car-totalizador-content">
+                    <span class="maior-consumo">Maior Consumo</span>
+                    <span>Nova Mutum - 75 Unidades</span>
+                </div>
+
+            </div>
+            <div class="card-totalizador">
+                <i class="fa-solid fa-chart-line"></i>
+                <div class="car-totalizador-content">
+                    <span class="Maior-custo">Maior Custo</span>
+                    <span>Nova Mutum - R$ 339,50</span>
+                </div>
+            </div>
+
+        </div>
+        
+       
+    </section>
+    
 </body>
-
 </html>

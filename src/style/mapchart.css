@@ -1,0 +1,19 @@
+.highcharts-credits{
+    display: none;
+}
+.highcharts-exporting-group{
+    display: none;
+}
+.highcharts-no-tooltip{
+    display: none;
+}
+
+#container-map {
+    height: 70vh;
+    width: 30vw;
+    background-color: var(--brand-back);
+    position: fixed;
+    top: 150px;
+    right: -0;
+}
+

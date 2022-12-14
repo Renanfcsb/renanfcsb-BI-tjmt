@@ -1,0 +1,10 @@
+body{
+    height: 220vh;
+    background-color: var(--brand-back);
+}
+
+.container-all{
+    margin-top: 155px;
+    display: flex;
+    height: 500px;
+}

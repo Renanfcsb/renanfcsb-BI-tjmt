@@ -1,0 +1,60 @@
+.filters{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    z-index: 1;
+    background-color: var(--brand-back);
+}
+.filter-search{
+    background-color: var(--vanish);
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.filter-data{
+    background-color: var(--vanish);
+    width: 250px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    font-family: "Poppins", sans-serif;
+}
+.filter-instancia{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.filter-button-atualizar{
+    background-color:  var(--brand1);
+    color: var(--vanish);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}
+
+.troca{
+
+    background-color:  var(--brand1);
+    color: var(--vanish);
+    margin-right: 2px;
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+}

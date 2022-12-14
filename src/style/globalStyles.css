@@ -1,0 +1,17 @@
+@import url(charts.css);
+@import url(header.css);
+@import url(mapchart.css);
+@import url(navbar.css);
+@import url(style.css);
+@import url(filter.css);
+@import url(totalizadores.css);
+@import url(print.css);
+
+:root{
+    --brand1: rgb(57,66,112);
+    --brand2: rgb(52,155,197);
+    --brand3: rgb(85,179,194);
+    --brand-back: #f0f8ff;
+    --vanish: #fff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
