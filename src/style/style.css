@@ -5,6 +5,13 @@ body{
 
 .container-all{
     margin-top: 155px;
+    width: 65vw;
     display: flex;
     height: 500px;
+}
+.container-not-map{
+    width: 90vw;
+    margin-left:100px ;
+    display: flex;
+    flex-direction: row;
 }

@@ -13,14 +13,15 @@
    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
    
-    <script src="src/script/chartcreatmap.js"></script>
-    <script src="src/script/chartcreate.js"></script>
-    <script src="src/script/plugin.js"></script>
+    <script src="src/scriptsrenders/chartcreatmap.js"></script>
+    <script src="src/scriptsrenders/chartcreate.js"></script>
+    <script src="src/scriptsrenders/plugin.js"></script>
     
 
     <script defer src="src/script/charts.js"></script>
     <script defer src="src/script/almoxarifado.js"></script>
     <script defer src="src/script/renders.js"></script>
+    <script defer src="src/script/notification.js"></script>
 
     <link rel="stylesheet" href="src/style/reset.css">
     <link rel="stylesheet" href="src/style/globalStyles.css">
@@ -45,64 +46,72 @@
     </header>
 
     
+    <nav class="nav-bar print">
+
+        <li >
+            <a href="#" class="nav-pedidos">
+                <i class="fas fa-regular fa-bell"></i>
+                <span class="nav-item">Requisições</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#" class="nav-almoxarifado">
+                <i class="fas fa-solid fa-paperclip"></i>
+                <span class="nav-item">Almoxarifado</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="fas fa-solid fa-recycle"></i>
+                <span class="nav-item">Bens Inservíveis</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="fas fa-regular fa-building"></i>
+                <span class="nav-item">Imóveis</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-solid fa-chair"></i>
+                <span class="nav-item">Patrimônio</span>
+            </a>
+        </li>
+
+        <!-- <li>
+            <a href="#">
+                <i class="fas fa-solid fa-square-poll-horizontal"></i>
+                <span class="nav-item">Relatórios</span>
+            </a>
+        </li> -->
+        
+        <li>
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span class="nav-item">Configurações</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-item">Sair</span>
+            </a>
+        </li>
+
+    </nav>
+  
     
     <section class="container-all">
-        <div>
-            <nav class="nav-bar print">
-                <li>
-                    <a href="#">
-                        <i class="fas fa-solid fa-paperclip"></i>
-                        <span class="nav-item">Almoxarifado</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="fas fa-solid fa-recycle"></i>
-                        <span class="nav-item">Bens Inservíveis</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="fas fa-regular fa-building"></i>
-                        <span class="nav-item">Imóveis</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-solid fa-chair"></i>
-                        <span class="nav-item">Patrimônio</span>
-                    </a>
-                </li>
-
-                <!-- <li>
-                    <a href="#">
-                        <i class="fas fa-solid fa-square-poll-horizontal"></i>
-                        <span class="nav-item">Relatórios</span>
-                    </a>
-                </li> -->
-                
-                <li>
-                    <a href="#">
-                        <i class="fas fa-cog"></i>
-                        <span class="nav-item">Configurações</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item">Sair</span>
-                    </a>
-                </li>
-
-            </nav>
-        </div>
+        
 
         <div class="container-content">
 
-            <div class="filters print">
+            <div class="container-filters print">
                 <div class="filter-data">
                     Defina Data
                     <div>
@@ -117,21 +126,33 @@
                 </div>
 
                 <div class="filter-instancia">
-                    
-                    <input type="checkbox" value="primeira">
-                    <label for="primeira">Primeira Instância </label>
-                    <input type="checkbox" value="segunda">
-                    <label for="segunda">Segunda Instância </label>   
+                    <div>                    
+                        <input type="checkbox" value="primeira">
+                        <label for="primeira">Primeira Instância </label>
+
+                    </div>
+
+                    <div>
+                        <input type="checkbox" value="segunda">
+                        <label for="segunda">Segunda Instância </label>   
+                    </div>
+
                 </div>
 
-                <button class="filter-button-atualizar">Atualizar</button>
-
-                <button  class="troca" value="bar">Barra</button>
-                <button  class="troca" value="line">Linha</button>
-                <button  class="troca" value="doughnut">Rosquinha</button>
+                <div class="countainer-select-charts">
+                    <select name="Graficos" id="select-charts">
+                        <option  class="troca" value="#">Selecione Grafico</option>
+                        <option  class="troca" value="bar">Barra</option>
+                        <option  class="troca" value="line">Linha</option>
+                        <option  class="troca" value="doughnut">Rosquinha</option>
+                        <option  class="troca" value="bubble">Disperção Dimensionada</option>
+                        <option  class="troca" value="pie">Pizza</option>
+                        <option  class="troca" value="radar">Radar</option>
+                        <option  class="troca" value="scatter">Disperção</option>
+                        <option  class="troca" value="polarArea">Area Polarizada</option>
+                    </select>
+                </div>
             </div>
-
-
 
             <div class="mycharts-render">
                 <canvas id="myChart">
